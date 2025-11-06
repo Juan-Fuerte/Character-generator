@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Ghibli Character Picker</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 40px;
+            background: #faf3e0;
+        }
+
+        h1 {
+            color: #5a4633;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            background: #8b5e34;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6e482a;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 26px;
+            color: #3a2e20;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎥 Random Ghibli Character Picker</h1>
+    <p>Click the button to get a random Studio Ghibli character!</p>
+
+    <button onclick="pickCharacter()">Pick a Character</button>
+
+    <h2 id="result">Your character will appear here.</h2>
+
+    <script>
+        const ghibliCharacters = [
+            "Chihiro (Spirited Away)",
+            "Haku (Spirited Away)",
+            "Howl (Howl's Moving Castle)",
+            "Sophie (Howl's Moving Castle)",
+            "Ponyo (Ponyo)",
+            "Sosuke (Ponyo)",
+            "San (Princess Mononoke)",
+            "Ashitaka (Princess Mononoke)",
+            "Totoro (My Neighbor Totoro)",
+            "Kiki (Kiki's Delivery Service)",
+            "Nausicaä (Nausicaä of the Valley of the Wind)",
+            "Sheeta (Castle in the Sky)",
+            "Pazu (Castle in the Sky)",
+            "Arrietty (The Secret World of Arrietty)",
+            "Shizuku (Whisper of the Heart)",
+            "Haru (The Cat Returns)",
+            "Baron (The Cat Returns)",
+            "Jiro (The Wind Rises)",
+            "Kaguya (The Tale of the Princess Kaguya)"
+        ];
+
+        function pickCharacter() {
+            const randomIndex = Math.floor(Math.random() * ghibliCharacters.length);
+            const character = ghibliCharacters[randomIndex];
+
+            document.getElementById("result").textContent =
+                "You got: " + character + "!";
+        }
+    </script>
+
+</body>
+</html>
